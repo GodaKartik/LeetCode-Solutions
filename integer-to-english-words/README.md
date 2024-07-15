@@ -1,3 +1,8 @@
+[solution](./inwords.py)
+[leetcode problem](https://leetcode.com/problems/integer-to-english-words/description)
+[leetcode submission](https://leetcode.com/problems/integer-to-english-words/submissions/1321134008?submissionId=1321134008)
+
+
 ## Workflow
 1. create dictionary mappings for modular naming
 2. convert the number into string
