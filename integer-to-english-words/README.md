@@ -23,13 +23,29 @@ things to note:
 1. we extract the units, tens and hundreds places as individual digits using `//` and `%` operators
 2. for hundreds, we take the word form of hundreds place digit from the mapping and append ' Hundred' to it or leave blank if hundreds place is 0
 3. for tens place we have 3 possibilities
-  i. teens - we club the units place digit and get the mapping from the teens dictionary
-  ii. 20-50 and 80 - for twnety to fifty and eighty, we need to use mappings from a tens dicntionary
-  iii. after 50, we just need the number and append 'ty'. example - 50 is not five-ty and 80 is not eight-ty but 60, 70 etc are six-ty, seven-ty, etc
+    1. teens - we club the units place digit and get the mapping from the teens dictionary
+    2. 20-50 and 80 - for twnety to fifty and eighty, we need to use mappings from a tens dicntionary
+    3. after 50, we just need the number and append 'ty'. example - 50 is not five-ty and 80 is not eight-ty but 60, 70 etc are six-ty, seven-ty, etc
+    * this is not a mandatory step. to avoid one conditional, all tens places can be part of the mapping witout using `+ 'ty'` logic
 4. if it is not a teen, we take and get the word of the units digit seperately
-5. join units, hundreds, tens and return it
+5. join hundreds, tens and units and return it
+
+### convert the entire number to words
+`numberToWords(number: int) -> str`
+1. add an edge case for 
+2. convert the number into partitioned string array using previous method
+3. if the list is 4 elements long, we have a billions place. make the first part into words and add 'billions', second part to words and add 'millions' and so on. if the list is 3 elements long, we have a millions place. make the first part to words and add 'millions' and so on. similarly for 2 elements (hundred thousands) and just 3 digit numbers
+4. append all the partition names to one string and that will be te final output. in case extra space were added to end of string due to need of adding spaces between places, `throw in a strip()` before returning
 
 ## Estimted Time Complexity
+
+**O(n)**
+
+converting to array takes n/3 + 1 steps (overall O(n))
+
+converting 3 digit sets to words takes 4 steps and 3 conditionals (overall constant time)
+
+converting the entire number to words uses the 3-digit conversion function approximately n/3 times - we did not loop over the list elements since we used 4 `if` clauses. however, in a general and ideal approach, we have to go through the list elements iteratively (overall O(n))
 
 ## References
 
