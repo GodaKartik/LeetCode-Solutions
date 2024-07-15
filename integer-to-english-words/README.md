@@ -3,7 +3,7 @@
 ## Workflow
 1. create dictionary mappings for modular naming
 2. convert the number into string
-3. split the number at every 3rd number till we reach the end
+3. split the number at every 3rd digit from the right till we reach the end
 4. create a function to convert 3 digit numbers to words using the mappings
 5. keep applying the 3 digit number conversion function to all sets of 3 digits and add *billion*, *million*, etc as needed
 6. strip extra spaces etc
@@ -21,6 +21,13 @@ things to note:
 ### convert 3 digit partitions into words
 `to_words_3_dig(num: str) -> str`
 1. we extract the units, tens and hundreds places as individual digits using `//` and `%` operators
+2. for hundreds, we take the word form of hundreds place digit from the mapping and append ' Hundred' to it or leave blank if hundreds place is 0
+3. for tens place we have 3 possibilities
+  i. teens - we club the units place digit and get the mapping from the teens dictionary
+  ii. 20-50 and 80 - for twnety to fifty and eighty, we need to use mappings from a tens dicntionary
+  iii. after 50, we just need the number and append 'ty'. example - 50 is not five-ty and 80 is not eight-ty but 60, 70 etc are six-ty, seven-ty, etc
+4. if it is not a teen, we take and get the word of the units digit seperately
+5. join units, hundreds, tens and return it
 
 ## Estimted Time Complexity
 
