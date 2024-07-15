@@ -53,5 +53,4 @@ converting 3 digit sets to words takes 4 steps and 3 conditionals (overall const
 
 converting the entire number to words uses the 3-digit conversion function approximately n/3 times - we did not loop over the list elements since we used 4 `if` clauses. however, in a general and ideal approach, we have to go through the list elements iteratively (overall O(n))
 
-## References
 
