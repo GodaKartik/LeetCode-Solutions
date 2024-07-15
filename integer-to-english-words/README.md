@@ -1,5 +1,3 @@
-## Approach
-
 ## Workflow
 1. create dictionary mappings for modular naming
 2. convert the number into string
@@ -7,6 +5,7 @@
 4. create a function to convert 3 digit numbers to words using the mappings
 5. keep applying the 3 digit number conversion function to all sets of 3 digits and add *billion*, *million*, etc as needed
 6. strip extra spaces etc
+
 ## Explanation
 things to note:
 * the constraints of this problem say that the number is less than 2^31^-1 (= 2,147,483,647). so, the code will work only upto billions (999,999,999,999) and not further
